@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 export default function Questao() {
 
-  const [questao, setQuestao] = useState(null);
+  const [questao, setQuestao] = useState({ enunciado: '', respostas: [], id: ''});
 
   useEffect(() => {
     fetch('http://localhost:3000/api/questao/1')
@@ -12,7 +12,7 @@ export default function Questao() {
 
   function renderizarRespostas() {
     if (questao) {
-      return questao.respostas.map((resposta: any, index) => {
+      return questao.respostas?.map((resposta: any, index) => {
         return <li key={index}>{resposta}</li>
       })
     }
