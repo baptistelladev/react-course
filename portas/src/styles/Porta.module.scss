@@ -1,0 +1,64 @@
+
+
+
+.area {
+  width: var(--area-porta-largura);
+  height: var(--area-porta-altura);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8px;
+
+  .estrutura {
+    display: flex;
+    flex: 1;
+    border-left: 5px solid brown;
+    border-top: 5px solid brown;
+    border-right: 5px solid brown;
+    width: 90%;
+    background: rgba(0, 0, 0, .5);
+    transition: all 200ms ease;
+  }
+
+  .porta {
+    display: flex;
+    flex-direction: column;
+    background-color: chocolate;
+    padding: 15px;
+    align-items: center;
+    /* temp */
+    flex: 1;
+    position: relative;
+  
+    .numero {
+      font-size: 3rem;
+    }
+
+    .macaneta {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background-color: brown;
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .chao {
+    height: 10px;
+    width: 100%;
+    background-color: #ddd;
+  }
+
+  &.selecionada {
+    .estrutura {
+      border-color: yellow;
+
+      .macaneta {
+        background-color: yellow;
+      }
+    }
+  }
+}
